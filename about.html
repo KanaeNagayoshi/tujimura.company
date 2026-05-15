@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="辻村塗装工業株式会社の会社案内。昭和12年創業、神戸市長田区を拠点に85年以上の歴史を持つ老舗塗装会社です。">
+  <title>会社案内 | 辻村塗装工業株式会社</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .history-timeline {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .history-item {
+      display: flex;
+      gap: 24px;
+      padding-bottom: 36px;
+      position: relative;
+    }
+    .history-item:last-child { padding-bottom: 0; }
+    .history-year {
+      width: 90px;
+      flex-shrink: 0;
+      text-align: right;
+    }
+    .history-year span {
+      display: inline-block;
+      background: var(--color-accent);
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 4px 4px;
+      border-radius: 100px;
+    }
+    .history-line {
+      width: 2px;
+      background: var(--color-border);
+      position: absolute;
+      left: 106px;
+      top: 28px;
+      bottom: 0;
+    }
+    .history-item:last-child .history-line { display: none; }
+    .history-body {
+      flex: 1;
+      padding-top: 2px;
+    }
+    .history-body h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 4px;
+    }
+    .history-body p {
+      font-size: 0.87rem;
+      color: var(--color-text-light);
+      line-height: 1.7;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .team-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+    }
+    .team-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .team-card-body {
+      padding: 20px;
+    }
+    .team-card-body h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 4px;
+    }
+    .team-card-body .role {
+      font-size: 0.8rem;
+      color: var(--color-accent-dark);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .team-card-body p {
+      font-size: 0.83rem;
+      color: var(--color-text-light);
+      line-height: 1.7;
+    }
+
+    .area-map-section {
+      background: var(--color-bg-light);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-top: 60px;
+    }
+    .area-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .area-tag {
+      padding: 6px 16px;
+      background: var(--color-accent-pale);
+      border: 1px solid var(--color-accent-light);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-accent-dark);
+    }
+
+    @media (max-width: 768px) {
+      .team-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 500px) {
+      .team-grid { grid-template-columns: 1fr; }
+      .history-year { width: 70px; }
+      .history-line { left: 86px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header (same as index) -->
+<header id="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <div class="logo-icon"><img src="images/logo0.png" alt="辻"></div>
+        <div class="logo-text">
+          <div class="company-name-main">辻村塗装工業株式会社</div>
+          <div class="company-name-sub">TSUJIMURA TOSOU KOGYO Co., Ltd.</div>
+        </div>
+      </a>
+      <nav class="header-nav">
+        <a href="index.html">ホーム</a>
+        <a href="about.html" style="color:var(--color-accent-dark);">会社案内</a>
+        <a href="services.html">施工内容</a>
+        <a href="works.html">施工実績</a>
+        <a href="flow.html">ご依頼の流れ</a>
+        <a href="contact.html">お問い合わせ</a>
+      </nav>
+      <div class="header-right">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="instagram-link">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="contact.html" class="btn btn-primary header-cta">無料相談</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="メニュー" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav class="mobile-nav">
+    <a href="index.html"><i class="fas fa-home fa-fw" style="color:var(--color-accent); margin-right:10px;"></i>ホーム</a>
+    <a href="about.html"><i class="fas fa-building fa-fw" style="color:var(--color-accent); margin-right:10px;"></i>会社案内</a>
+    <a href="services.html"><i class="fas fa-paint-roller fa-fw" style="color:var(--color-accent); margin-right:10px;"></i>施工内容</a>
+    <a href="works.html"><i class="fas fa-images fa-fw" style="color:var(--color-accent); margin-right:10px;"></i>施工実績</a>
+    <a href="flow.html"><i class="fas fa-list-ol fa-fw" style="color:var(--color-accent); margin-right:10px;"></i>ご依頼の流れ</a>
+    <a href="contact.html"><i class="fas fa-envelope fa-fw" style="color:var(--color-accent); margin-right:10px;"></i>お問い合わせ</a>
+  </nav>
+  <div class="mobile-contact">
+    <p>お気軽にご相談ください</p>
+    <div class="phone"><i class="fas fa-phone" style="color:var(--color-accent-dark);"></i><a href="tel:0787311545" style="color:var(--color-navy);">078-731-1545</a></div>
+    <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center;"><i class="fas fa-paper-plane"></i> メールで無料相談</a>
+  </div>
+</div>
+
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1>会社案内</h1>
+    <p class="breadcrumb"><a href="index.html" style="color:rgba(255,255,255,0.6);">ホーム</a> ＞ <span>会社案内</span></p>
+  </div>
+</section>
+
+
+<!-- Message from President -->
+<section class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image fade-in">
+        <img src="images/ceo.jpg" alt="辻村塗装工業株式会社 代表取締役 辻村光宗の写真。現場を背景に笑顔で立っている">
+      </div>
+      <div class="about-content fade-in fade-in-delay-1">
+        <div class="section-title" style="text-align:left; margin-bottom:24px;">
+          <span class="en">Message</span>
+          <h2>代表からのご挨拶</h2>
+        </div>
+        <p class="about-lead">「お客様のお家を、我が家を塗るような気持ちで」</p>
+        <p class="about-text">
+          私は神戸の塗装会社の3代目として、日々事業に力を注いでおります。<br><br>
+
+          当社は昭和20年の設立以来、80年以上にわたり塗装一筋で歩んでまいりました。<br>
+          その中で、全国および兵庫県塗装工業会の発展に尽力してきた功績が認められ、
+          初代・二代目と親子二代にわたり国より勲章を授与されております。<br><br>
+
+          また私自身も兵庫県知事より「匠」として認定を受け、
+          高い技術の継承と発展に努めております。<br><br>
+
+          これからも「信頼と満足」をモットーに、
+          お客様に「任せてよかった」と心から思っていただける仕事を
+          一つひとつ丁寧に積み重ねてまいります。
+        </p>
+        <p style="font-family: var(--font-serif); font-size:1.05rem; color:var(--color-navy); font-weight:700; margin-top:16px;">
+          代表取締役　辻村 光宗
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Company Info -->
+<section class="company section" style="background: var(--color-bg-warm);">
+  <div class="container">
+    <div class="section-title fade-in">
+      <span class="en">Company Info</span>
+      <h2>会社概要</h2>
+    </div>
+    <div class="company-grid">
+      <div class="fade-in">
+        <table class="company-table">
+          <tr><th>会社名</th><td>辻村塗装工業株式会社</td></tr>
+          <tr><th>代表者</th><td>辻村 光宗</td></tr>
+          <tr><th>創業</th><td>昭和12年4月</td></tr>
+          <tr><th>設立</th><td>昭和23年3月</td></tr>
+          <tr><th>資本金</th><td>2,000万円</td></tr>
+          <tr><th>電話番号</th><td><a href="tel:0787311545" class="company-phone-link">078-731-1545</a></td></tr>
+          <tr><th>FAX</th><td>078-731-1547</td></tr>
+          <tr><th>住所</th><td>〒653-0021<br>神戸市長田区海運町2-5-17</td></tr>
+          <tr><th>登録許可</th><td>兵庫県知事 (般-20) 第115246号</td></tr>
+          <tr><th>営業時間</th><td>9:00〜18:00</td></tr>
+          <tr><th>定休日</th><td>土曜・日曜・祝日</td></tr>
+          <tr><th>施工エリア</th><td>姫路〜大阪（兵庫県・大阪府一円）</td></tr>
+        </table>
+      </div>
+      <div class="fade-in fade-in-delay-1">
+        <div class="company-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.5!2d135.142!3d34.666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e8cb81c4c5b9%3A0x0!2z56We5p2x5biC6ZW35Y2D5Yy655S65rW36YGT77yS5LiB55uu77yV4oiS77yR77yX!5e0!3m2!1sja!2sjp!4v1690000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="地図"></iframe>
+        </div>
+        <div style="margin-top:20px; padding:20px; background:var(--color-accent-pale); border-radius:var(--radius-md);">
+          <p style="font-size:0.88rem; color:var(--color-navy); font-weight:700; margin-bottom:8px;"><i class="fas fa-map-marker-alt" style="color:var(--color-accent);"></i> アクセス</p>
+          <p style="font-size:0.85rem; color:var(--color-text-light); line-height:1.8;">〒653-0021 神戸市長田区海運町2-5-17<br><span style="font-size:0.8rem; color:var(--color-text-muted);">（地下鉄海岸線「駒ヶ林駅」より徒歩約5分）</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- History -->
+<section class="section">
+  <div class="container">
+    <div class="section-title fade-in">
+      <span class="en">History</span>
+      <h2>会社の歩み</h2>
+    </div>
+    <div class="history-timeline">
+      <div class="history-item fade-in">
+        <div class="history-year"><span>昭和12年</span></div>
+        <div class="history-line"></div>
+        <div class="history-body">
+          <h4>創業</h4>
+          <p>神戸市長田区にて辻村塗装工業を創業。地域密着の塗装店としてスタート。</p>
+        </div>
+      </div>
+      <div class="history-item fade-in">
+        <div class="history-year"><span>昭和23年</span></div>
+        <div class="history-line"></div>
+        <div class="history-body">
+          <h4>株式会社設立</h4>
+          <p>辻村塗装工業株式会社として法人化。組織体制を整え事業を拡大。</p>
+        </div>
+      </div>
+      <div class="history-item fade-in">
+        <div class="history-year"><span>昭和〜平成</span></div>
+        <div class="history-line"></div>
+        <div class="history-body">
+          <h4>施工エリアの拡大</h4>
+          <p>神戸市内から兵庫県一円、さらに大阪府まで施工エリアを拡大。外壁塗装・屋根塗装に加え、防水工事・内装工事にも対応範囲を広げる。</p>
+        </div>
+      </div>
+      <div class="history-item fade-in">
+        <div class="history-year"><span>現在</span></div>
+        <div class="history-line"></div>
+        <div class="history-body">
+          <h4>地域のパートナーとして</h4>
+          <p>創業85年以上。自社職人と信頼できる協力会社との連携体制で、姫路から大阪まで高品質な施工をご提供し続けています。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Service Area -->
+<section class="section" style="background: var(--color-bg-light);">
+  <div class="container">
+    <div class="section-title fade-in">
+      <span class="en">Service Area</span>
+      <h2>施工エリア</h2>
+      <span class="subtitle">姫路から大阪まで幅広く対応しています</span>
+    </div>
+    <div class="area-map-section fade-in">
+      <p style="font-size:0.95rem; color:var(--color-text-light); line-height:1.8; margin-bottom:20px;">
+        弊社は神戸市長田区を拠点に、兵庫県・大阪府を中心に施工対応しております。
+        エリア外でもご相談に応じる場合がございますので、まずはお気軽にお問い合わせください。
+      </p>
+      <div class="area-tags">
+        <span class="area-tag">神戸市（全域）</span>
+        <span class="area-tag">明石市</span>
+        <span class="area-tag">姫路市</span>
+        <span class="area-tag">加古川市</span>
+        <span class="area-tag">三木市</span>
+        <span class="area-tag">西宮市</span>
+        <span class="area-tag">芦屋市</span>
+        <span class="area-tag">尼崎市</span>
+        <span class="area-tag">伊丹市</span>
+        <span class="area-tag">宝塚市</span>
+        <span class="area-tag">川西市</span>
+        <span class="area-tag">大阪市</span>
+        <span class="area-tag">豊中市</span>
+        <span class="area-tag">吹田市</span>
+        <span class="area-tag">その他兵庫・大阪全域</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Inline CTA -->
+<section style="padding: 60px 0; background: var(--color-bg);">
+  <div class="container">
+    <div class="inline-cta fade-in">
+      <div class="inline-cta-text">
+        <h3>まずは無料でご相談ください</h3>
+        <p>お見積もり・現地調査はすべて無料です。お気軽にどうぞ。</p>
+      </div>
+      <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> 無料でご相談する</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-icon"><img src="images/logo1.png" alt="辻"></div>
+        <div class="company-name">辻村塗装工業株式会社</div>
+        <p>昭和12年の創業以来、神戸・長田区を拠点に地域の皆様のお住まいを守り続けています。</p>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="footer-instagram"><i class="fab fa-instagram" style="font-size:1.3rem; margin-right:6px;"></i>Instagramで施工実績を見る</a>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="about.html">会社案内</a></li>
+          <li><a href="services.html">施工内容</a></li>
+          <li><a href="works.html">施工実績</a></li>
+          <li><a href="flow.html">ご依頼の流れ</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div class="footer-info">
+        <h4>Company Info</h4>
+        <div class="info-item"><span class="info-icon">📞</span><div class="info-text"><a href="tel:0787311545">078-731-1545</a><br><small>9:00〜18:00（土日祝定休）</small></div></div>
+        <div class="info-item"><span class="info-icon">📍</span><div class="info-text">〒653-0021<br>神戸市長田区海運町2-5-17</div></div>
+        <div class="footer-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.5!2d135.142!3d34.666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e8cb81c4c5b9%3A0x0!2z56We5p2x5biC6ZW35Y2D5Yy655S65rW36YGT77yS5LiB55uu77yV4oiS77yR77yX!5e0!3m2!1sja!2sjp!4v1690000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="地図"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 辻村塗装工業株式会社 All Rights Reserved.</p></div>
+  </div>
+</footer>
+
+<!-- Floating CTA -->
+<div class="floating-cta" id="floatingCta" style="opacity:0;">
+  <a href="contact.html" class="floating-cta-btn"><span class="pulse"></span>無料でご相談</a>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+  document.getElementById('header').addEventListener('scroll', () => {}, { passive: true });
+  window.addEventListener('scroll', () => {
+    document.getElementById('header').classList.toggle('scrolled', window.scrollY > 40);
+    const floatingCta = document.getElementById('floatingCta');
+    floatingCta.style.opacity = window.scrollY > 300 ? '1' : '0';
+    floatingCta.style.pointerEvents = window.scrollY > 300 ? 'auto' : 'none';
+  });
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  fadeEls.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

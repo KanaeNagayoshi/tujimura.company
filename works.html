@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="辻村塗装工業株式会社の施工実績。外壁塗装・屋根塗装・防水工事など神戸・兵庫の施工事例を多数掲載。">
+  <title>施工実績 | 辻村塗装工業株式会社</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .filter-tabs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .filter-tab {
+      padding: 8px 22px;
+      border: 2px solid var(--color-border);
+      border-radius: 100px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      background: white;
+      color: var(--color-text-light);
+      transition: var(--transition);
+      font-family: var(--font-main);
+    }
+    .filter-tab:hover, .filter-tab.active {
+      border-color: var(--color-accent);
+      background: var(--color-accent-pale);
+      color: var(--color-accent-dark);
+    }
+    .works-full-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    @media (max-width: 768px) { .works-full-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .works-full-grid { grid-template-columns: 1fr; } }
+
+    .work-card-full { display: none; }
+    .work-card-full.show { display: block; }
+  </style>
+</head>
+<body>
+
+<header id="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <div class="logo-icon"><img src="images/logo0.png" alt="辻"></div>
+        <div class="logo-text">
+          <div class="company-name-main">辻村塗装工業株式会社</div>
+          <div class="company-name-sub">TSUJIMURA TOSOU KOGYO Co., Ltd.</div>
+        </div>
+      </a>
+      <nav class="header-nav">
+        <a href="index.html">ホーム</a>
+        <a href="about.html">会社案内</a>
+        <a href="services.html">施工内容</a>
+        <a href="works.html" style="color:var(--color-accent-dark);">施工実績</a>
+        <a href="flow.html">ご依頼の流れ</a>
+        <a href="contact.html">お問い合わせ</a>
+      </nav>
+      <div class="header-right">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="instagram-link"><i class="fab fa-instagram"></i></a>
+        <a href="contact.html" class="btn btn-primary header-cta">無料相談</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="メニュー" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <nav class="mobile-nav">
+    <a href="index.html"><i class="fas fa-home fa-fw" style="color:var(--color-accent); margin-right:10px;"></i>ホーム</a>
+    <a href="about.html"><i class="fas fa-building fa-fw" style="color:var(--color-accent); margin-right:10px;"></i>会社案内</a>
+    <a href="services.html"><i class="fas fa-paint-roller fa-fw" style="color:var(--color-accent); margin-right:10px;"></i>施工内容</a>
+    <a href="works.html"><i class="fas fa-images fa-fw" style="color:var(--color-accent); margin-right:10px;"></i>施工実績</a>
+    <a href="flow.html"><i class="fas fa-list-ol fa-fw" style="color:var(--color-accent); margin-right:10px;"></i>ご依頼の流れ</a>
+    <a href="contact.html"><i class="fas fa-envelope fa-fw" style="color:var(--color-accent); margin-right:10px;"></i>お問い合わせ</a>
+  </nav>
+  <div class="mobile-contact">
+    <p>お気軽にご相談ください</p>
+    <div class="phone"><i class="fas fa-phone" style="color:var(--color-accent-dark);"></i><a href="tel:0787311545" style="color:var(--color-navy);">078-731-1545</a></div>
+    <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center;"><i class="fas fa-paper-plane"></i> メールで無料相談</a>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>施工実績</h1>
+    <p class="breadcrumb"><a href="index.html" style="color:rgba(255,255,255,0.6);">ホーム</a> ＞ <span>施工実績</span></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title fade-in">
+      <span class="en">Works</span>
+      <h2>施工実績</h2>
+      <span class="subtitle">代表的な施工事例をご紹介します。さらに多くの実績はInstagramでご覧いただけます。</span>
+    </div>
+
+    <!-- Filter -->
+    <div class="filter-tabs fade-in">
+      <button class="filter-tab active" data-filter="all">すべて</button>
+      <button class="filter-tab" data-filter="gaiheki">外壁塗装</button>
+      <button class="filter-tab" data-filter="yane">屋根塗装</button>
+      <button class="filter-tab" data-filter="bousui">防水工事</button>
+      <button class="filter-tab" data-filter="naisou">内装工事</button>
+    </div>
+
+    <div class="works-full-grid" id="worksGrid">
+      <!-- Work 1 -->
+      <div class="work-card work-card-full show" data-category="gaiheki">
+        <div class="work-images">
+          <img src="images/work1-after.jpg" alt="神戸市長田区T様邸の外壁塗装完成後写真。清潔感のあるクリーム色の外壁に生まれ変わっている">
+          <img src="images/work1-before.jpg" alt="T様邸外壁塗装前の状態。チョーキングと汚れが目立つ">
+          <img src="images/work1-detail.jpg" alt="外壁の細部仕上がり、サッシ周りの塗り分けが丁寧">
+        </div>
+        <div class="work-body">
+          <span class="work-category">外壁塗装</span>
+          <h3 class="work-title">神戸市長田区 T様邸 外壁塗装工事</h3>
+          <div class="work-meta">
+            <span>📍 神戸市長田区</span>
+            <span>🏠 2階建て戸建て</span>
+          </div>
+          <p style="font-size:0.83rem; color:var(--color-text-light); line-height:1.7; margin-top:10px;">
+            チョーキングが全面に出ており、色あせも目立つ状態でした。高圧洗浄・下地処理を丁寧に行い、フッ素塗料で仕上げました。
+          </p>
+        </div>
+      </div>
+
+      <!-- Work 2 -->
+      <div class="work-card work-card-full show" data-category="yane">
+        <div class="work-images">
+          <img src="images/work2-after.jpg" alt="神戸市須磨区M様邸の屋根塗装完成写真。美しいグレーに塗り替えられたスレート屋根">
+          <img src="images/work2-before.jpg" alt="屋根塗装前の状態。コケと色あせが広がるスレート屋根">
+          <img src="images/work2-detail.jpg" alt="棟板金の補修・塗装後の詳細">
+        </div>
+        <div class="work-body">
+          <span class="work-category">屋根塗装</span>
+          <h3 class="work-title">神戸市須磨区 M様邸 屋根塗装工事</h3>
+          <div class="work-meta">
+            <span>📍 神戸市須磨区</span>
+            <span>🏠 スレート屋根</span>
+          </div>
+          <p style="font-size:0.83rem; color:var(--color-text-light); line-height:1.7; margin-top:10px;">
+            コケの繁殖と塗装劣化が進んでいました。棟板金の釘浮きも補修し、シリコン塗料でしっかり仕上げました。
+          </p>
+        </div>
+      </div>
+
+      <!-- Work 3 -->
+      <div class="work-card work-card-full show" data-category="bousui">
+        <div class="work-images">
+          <img src="images/work3-after.jpg" alt="尼崎市K様邸のウレタン防水工事完成写真。きれいに仕上がったバルコニー床面">
+          <img src="images/work3-before.jpg" alt="防水工事前のひび割れが見られるベランダ床面">
+          <img src="images/work3-detail.jpg" alt="トップコート塗布作業中の写真">
+        </div>
+        <div class="work-body">
+          <span class="work-category">防水工事</span>
+          <h3 class="work-title">尼崎市 K様邸 ベランダ防水工事</h3>
+          <div class="work-meta">
+            <span>📍 尼崎市</span>
+            <span>🏠 ウレタン防水</span>
+          </div>
+          <p style="font-size:0.83rem; color:var(--color-text-light); line-height:1.7; margin-top:10px;">
+            ベランダ防水層のひび割れから雨水が侵入し、室内に染みが出ていました。ウレタン防水2層工法で確実に防水処理を施しました。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Instagram CTA -->
+    <div class="works-instagram fade-in" style="margin-top: 48px;">
+      <p style="font-weight:700; font-size:1rem; color:var(--color-navy); margin-bottom:8px;">さらに多くの施工実績をInstagramで公開中！</p>
+      <p>外壁塗装・屋根塗装・防水工事・内装工事の最新の施工写真を随時アップしています。<br>ぜひフォローしてご覧ください。</p>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="instagram-btn">
+        <span class="ig-icon"><i class="fab fa-instagram"></i></span>
+        @tsujimura_tosou でチェック
+      </a>
+    </div>
+
+    <!-- CTA -->
+    <div class="inline-cta fade-in" style="margin-top: 48px;">
+      <div class="inline-cta-text">
+        <h3>あなたのお家も、こんなに変わります</h3>
+        <p>無料現地調査・お見積もりから始めましょう。お気軽にご相談ください。</p>
+      </div>
+      <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> 無料でご相談する</a>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-icon"<img src="images/logo1.png" alt="辻"></div>
+        <div class="company-name">辻村塗装工業株式会社</div>
+        <p>昭和12年の創業以来、神戸・長田区を拠点に地域の皆様のお住まいを守り続けています。</p>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="footer-instagram"><i class="fab fa-instagram" style="font-size:1.3rem; margin-right:6px;"></i>Instagramで施工実績を見る</a>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="about.html">会社案内</a></li>
+          <li><a href="services.html">施工内容</a></li>
+          <li><a href="works.html">施工実績</a></li>
+          <li><a href="flow.html">ご依頼の流れ</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div class="footer-info">
+        <h4>Company Info</h4>
+        <div class="info-item"><span class="info-icon">📞</span><div class="info-text"><a href="tel:0787311545">078-731-1545</a><br><small>9:00〜18:00（土日祝定休）</small></div></div>
+        <div class="info-item"><span class="info-icon">📍</span><div class="info-text">〒653-0021<br>神戸市長田区海運町2-5-17</div></div>
+        <div class="footer-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.5!2d135.142!3d34.666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e8cb81c4c5b9%3A0x0!2z56We5p2x5biC6ZW35Y2D5Yy655S65rW36YGT77yS5LiB55uu77yV4oiS77yR77yX!5e0!3m2!1sja!2sjp!4v1690000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="地図"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 辻村塗装工業株式会社 All Rights Reserved.</p></div>
+  </div>
+</footer>
+
+<div class="floating-cta" id="floatingCta" style="opacity:0;">
+  <a href="contact.html" class="floating-cta-btn"><span class="pulse"></span>無料でご相談</a>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => { hamburger.classList.remove('active'); mobileMenu.classList.remove('open'); document.body.style.overflow = ''; });
+  });
+  window.addEventListener('scroll', () => {
+    document.getElementById('header').classList.toggle('scrolled', window.scrollY > 40);
+    const f = document.getElementById('floatingCta');
+    f.style.opacity = window.scrollY > 300 ? '1' : '0';
+    f.style.pointerEvents = window.scrollY > 300 ? 'auto' : 'none';
+  });
+  const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }); }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  // Filter functionality
+  const filterTabs = document.querySelectorAll('.filter-tab');
+  const workCards = document.querySelectorAll('.work-card-full');
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      filterTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const filter = tab.dataset.filter;
+      workCards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.classList.add('show');
+        } else {
+          card.classList.remove('show');
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
